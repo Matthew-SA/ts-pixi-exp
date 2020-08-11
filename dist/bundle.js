@@ -1010,6 +1010,30 @@ eval("var logLevel = \"info\";\n\nfunction dummy() {}\n\nfunction shouldLog(leve
 
 /***/ }),
 
+/***/ "./src/game/game.ts":
+/*!**************************!*\
+  !*** ./src/game/game.ts ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./input */ \"./src/game/input.ts\");\n\nvar Game = /** @class */ (function () {\n    function Game() {\n        this.input = new _input__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\n    }\n    return Game;\n}());\n;\n/* harmony default export */ __webpack_exports__[\"default\"] = (Game);\n\n\n//# sourceURL=webpack:///./src/game/game.ts?");
+
+/***/ }),
+
+/***/ "./src/game/input.ts":
+/*!***************************!*\
+  !*** ./src/game/input.ts ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar Input = /** @class */ (function () {\n    function Input() {\n        var _this = this;\n        this.movement = { UP: false, RIGHT: false, DOWN: false, LEFT: false };\n        document.addEventListener('keyup', function (e) { return _this.onKeyUp(e); });\n        document.addEventListener('keydown', function (e) { return _this.onKeyDown(e); });\n        // setInterval(() => console.log(this.movement), 60);\n    }\n    Input.prototype.onKeyDown = function (event) {\n        switch (event.keyCode) {\n            case 38:\n            case 87:\n                event.preventDefault();\n                this.movement.UP = true;\n                break;\n            case 39:\n            case 68:\n                event.preventDefault();\n                this.movement.RIGHT = true;\n                break;\n            case 40:\n            case 83:\n                event.preventDefault();\n                this.movement.DOWN = true;\n                break;\n            case 37:\n            case 65:\n                event.preventDefault();\n                this.movement.LEFT = true;\n                break;\n        }\n        ;\n    };\n    ;\n    Input.prototype.onKeyUp = function (event) {\n        switch (event.keyCode) {\n            case 38:\n            case 87:\n                event.preventDefault();\n                this.movement.UP = false;\n                break;\n            case 39:\n            case 68:\n                event.preventDefault();\n                this.movement.RIGHT = false;\n                break;\n            case 40:\n            case 83:\n                event.preventDefault();\n                this.movement.DOWN = false;\n                break;\n            case 37:\n            case 65:\n                event.preventDefault();\n                this.movement.LEFT = false;\n                break;\n        }\n        ;\n    };\n    ;\n    return Input;\n}());\n;\n/* harmony default export */ __webpack_exports__[\"default\"] = (Input);\n\n\n//# sourceURL=webpack:///./src/game/input.ts?");
+
+/***/ }),
+
 /***/ "./src/index.ts":
 /*!**********************!*\
   !*** ./src/index.ts ***!
@@ -1018,7 +1042,7 @@ eval("var logLevel = \"info\";\n\nfunction dummy() {}\n\nfunction shouldLog(leve
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var pixi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pixi.js */ \"./node_modules/pixi.js/lib/pixi.es.js\");\n\nvar root = document.getElementById(\"root\");\nif (root) {\n    root.innerText = \"test\";\n}\n;\nvar app = new pixi_js__WEBPACK_IMPORTED_MODULE_0__[\"Application\"]({ width: 256, height: 256 });\ndocument.body.appendChild(app.view);\n\n\n//# sourceURL=webpack:///./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var pixi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pixi.js */ \"./node_modules/pixi.js/lib/pixi.es.js\");\n/* harmony import */ var _game_game__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./game/game */ \"./src/game/game.ts\");\n\n\nvar root = document.getElementById('root');\nif (root) {\n    root.innerText = \"test\";\n}\n;\nvar app = new pixi_js__WEBPACK_IMPORTED_MODULE_0__[\"Application\"]({\n    width: 800,\n    height: 600,\n});\ndocument.body.appendChild(app.view);\nwindow.addEventListener('load', function () { return new _game_game__WEBPACK_IMPORTED_MODULE_1__[\"default\"](); }, false);\n\n\n//# sourceURL=webpack:///./src/index.ts?");
 
 /***/ }),
 
@@ -1029,7 +1053,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var pixi
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! /Users/matthew-sa/projects/ts-template/node_modules/webpack-dev-server/client/index.js?http://localhost:8080 */\"./node_modules/webpack-dev-server/client/index.js?http://localhost:8080\");\nmodule.exports = __webpack_require__(/*! ./src/index.ts */\"./src/index.ts\");\n\n\n//# sourceURL=webpack:///multi_(webpack)-dev-server/client?");
+eval("__webpack_require__(/*! /Users/matthew-sa/projects/ts-pixi-exp/node_modules/webpack-dev-server/client/index.js?http://localhost:8080 */\"./node_modules/webpack-dev-server/client/index.js?http://localhost:8080\");\nmodule.exports = __webpack_require__(/*! ./src/index.ts */\"./src/index.ts\");\n\n\n//# sourceURL=webpack:///multi_(webpack)-dev-server/client?");
 
 /***/ })
 
